@@ -5,7 +5,7 @@ import { gsap } from "@/lib/gsap";
 
 export default function Preloader({ onComplete }) {
   const [progress, setProgress] = useState(0);
-  const [statusText, setStatusText] = useState("INITIALIZING ENGINE");
+  const [statusText, setStatusText] = useState("INITIALIZING RUNTIME");
   const containerRef = useRef(null);
   const contentRef = useRef(null);
   const progressBarRef = useRef(null);
@@ -25,11 +25,11 @@ export default function Preloader({ onComplete }) {
         setProgress(currentVal);
 
         if (currentVal < 30) {
-          setStatusText("INITIALIZING CREATIVE RUNTIME");
+          setStatusText("INITIALIZING MERN RUNTIME");
         } else if (currentVal < 65) {
-          setStatusText("CALIBRATING GEOMETRY & TYPOGRAPHY");
+          setStatusText("CALIBRATING FULL-STACK MODULES");
         } else if (currentVal < 92) {
-          setStatusText("INDEXING SELECTED ARCHIVES");
+          setStatusText("INDEXING PROJECTS & ARCHITECTURE");
         } else {
           setStatusText("SYSTEM READY");
         }
@@ -81,10 +81,10 @@ export default function Preloader({ onComplete }) {
           <span className="w-1.5 h-1.5 rounded-full bg-[#E2F163] animate-pulse" />
           <span>SHASHANK LAKHERA</span>
           <span className="hidden sm:inline text-[#515561]">/</span>
-          <span className="hidden sm:inline">FOLIO 2026</span>
+          <span className="hidden sm:inline">FULL-STACK DEVELOPER</span>
         </div>
         <div className="flex items-center gap-4">
-          <span className="hidden md:inline text-[#515561]">DELHI, INDIA</span>
+          <span className="hidden md:inline text-[#515561]">BHOPAL, MP</span>
           <span>EST. 2026</span>
         </div>
       </div>
@@ -122,12 +122,12 @@ export default function Preloader({ onComplete }) {
 
         <div className="flex justify-between items-center tracking-[0.18em] uppercase pt-1">
           <div className="flex items-center gap-3">
-            <span>PRECISION INTERFACES</span>
+            <span>MERN ARCHITECTURE</span>
             <span className="text-[#515561] hidden sm:inline">&bull;</span>
-            <span className="hidden sm:inline">CREATIVE DIRECTION</span>
+            <span className="hidden sm:inline">REAL-TIME SYSTEMS</span>
           </div>
           <div className="text-[#E2F163]">
-            {progress === 100 ? "UNMASKING EXPERIENCE" : "LOADING ASSETS"}
+            {progress === 100 ? "UNMASKING PORTFOLIO" : "SYNCHRONIZING MODULES"}
           </div>
         </div>
       </div>
