@@ -32,11 +32,17 @@ export const metadata = {
       "Awwwards-level designer portfolio crafting precision digital experiences, architectural typography, and interactive systems.",
     siteName: "Shashank Lakhera Portfolio",
   },
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased bg-[#090A0C]`}>
+    <html
+      lang="en"
+      className={`${inter.variable} h-full antialiased bg-[#090A0C]`}
+    >
       <body className="min-h-full flex flex-col font-sans bg-[#090A0C] text-[#EFEFEF]">
         <ClientShell>{children}</ClientShell>
       </body>
