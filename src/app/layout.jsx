@@ -10,26 +10,34 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Shashank Lakhera — Designer & Creative Technologist",
+  title: "Shashank Lakhera — Full-Stack Developer | MERN Stack Specialist",
   description:
-    "Awwwards-level designer portfolio crafting precision digital experiences, architectural typography, and interactive systems.",
+    "Full-Stack Developer and Computer Science graduate specializing in the MERN stack. Experienced in building scalable web applications using React.js, Node.js, Express.js, and MongoDB, with expertise in RESTful APIs, authentication systems, payment integration, and responsive frontend development.",
   keywords: [
     "Shashank Lakhera",
-    "Creative Technologist",
-    "Digital Designer",
-    "GSAP Developer",
-    "Next.js Portfolio",
-    "Interaction Design",
+    "Full-Stack Developer",
+    "MERN Stack Developer",
+    "React.js",
+    "Next.js",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Socket.io",
+    "Redux Toolkit",
+    "TanStack Query",
+    "Docker",
+    "Software Engineer",
+    "Bhopal",
   ],
   authors: [{ name: "Shashank Lakhera" }],
   creator: "Shashank Lakhera",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://shashanklakhera.design",
-    title: "Shashank Lakhera — Designer & Creative Technologist",
+    url: "https://shashanklakhera.vercel.app",
+    title: "Shashank Lakhera — Full-Stack Developer | MERN Stack Specialist",
     description:
-      "Awwwards-level designer portfolio crafting precision digital experiences, architectural typography, and interactive systems.",
+      "Full-Stack Developer and Computer Science graduate specializing in building scalable web applications using React.js, Node.js, Express.js, and MongoDB.",
     siteName: "Shashank Lakhera Portfolio",
   },
   icons: {

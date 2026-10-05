@@ -1,15 +1,13 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Menu, X } from "lucide-react";
-import { usePageTransition } from "./PageTransition";
 
 export default function Navbar() {
   const [time, setTime] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { navigateWithTransition } = usePageTransition();
 
   useEffect(() => {
     const updateTime = () => {
@@ -39,8 +37,9 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { label: "WORK", href: "#work" },
-    { label: "PHILOSOPHY", href: "#philosophy" },
+    { label: "PROJECTS", href: "#work" },
+    { label: "SKILLS", href: "#skills" },
+    { label: "EXPERIENCE", href: "#experience" },
     { label: "ABOUT", href: "#about" },
     { label: "CONTACT", href: "#contact" },
   ];
@@ -61,7 +60,7 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
           scrolled
-            ? "py-4 bg-[#090A0C]/80 backdrop-blur-md border-b border-white/5"
+            ? "py-4 bg-[#090A0C]/85 backdrop-blur-md border-b border-white/5"
             : "py-7 bg-transparent"
         }`}
       >
@@ -82,7 +81,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-9 text-xs font-mono tracking-[0.16em] uppercase text-[#8A8F9E]">
+          <nav className="hidden md:flex items-center gap-8 text-xs font-mono tracking-[0.16em] uppercase text-[#8A8F9E]">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -99,7 +98,7 @@ export default function Navbar() {
           {/* Time & Quick Action */}
           <div className="hidden lg:flex items-center gap-6 font-mono text-xs text-[#8A8F9E]">
             <div className="flex items-center gap-2 tracking-widest">
-              <span className="text-[#515561]">DELHI</span>
+              <span className="text-[#515561]">BHOPAL</span>
               <span className="text-[#EFEFEF] tabular-nums">{time || "12:00:00"}</span>
               <span className="text-[#515561]">IST</span>
             </div>
@@ -151,7 +150,7 @@ export default function Navbar() {
 
         <div className="pt-8 border-t border-white/10 font-mono text-xs text-[#8A8F9E] flex justify-between items-center">
           <div>
-            DELHI <span className="text-[#EFEFEF] tabular-nums">{time}</span> IST
+            BHOPAL <span className="text-[#EFEFEF] tabular-nums">{time}</span> IST
           </div>
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#E2F163]" />
