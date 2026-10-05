@@ -74,28 +74,32 @@ export default function WorkSection() {
 
                 {/* Project Links: GitHub & Live */}
                 <div className="flex items-center gap-3 self-start lg:self-auto font-mono text-xs">
-                  <a
-                    href={project.links?.github || "https://github.com/S-lakhera"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 hover:border-white/30 bg-white/[0.03] text-[#EFEFEF] hover:text-[#E2F163] transition-all"
-                    data-cursor="GITHUB"
-                  >
-                    <GithubIcon className="w-3.5 h-3.5" />
-                    <span>GITHUB</span>
-                    <ArrowUpRight className="w-3 h-3 text-[#515561] group-hover:text-[#E2F163]" />
-                  </a>
+                  {project.links?.github && (
+                    <a
+                      href={project.links.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 hover:border-white/30 bg-white/[0.03] text-[#EFEFEF] hover:text-[#E2F163] transition-all"
+                      data-cursor="GITHUB"
+                    >
+                      <GithubIcon className="w-3.5 h-3.5" />
+                      <span>GITHUB</span>
+                      <ArrowUpRight className="w-3 h-3 text-[#515561] group-hover:text-[#E2F163]" />
+                    </a>
+                  )}
 
-                  <a
-                    href={project.links?.live || "#"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 hover:border-[#E2F163]/40 bg-white/[0.03] text-[#EFEFEF] hover:text-[#E2F163] transition-all"
-                    data-cursor="LIVE"
-                  >
-                    <ExternalLink className="w-3.5 h-3.5 text-[#E2F163]" />
-                    <span>LIVE DEMO</span>
-                  </a>
+                  {project.links?.live && (
+                    <a
+                      href={project.links.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 hover:border-[#E2F163]/40 bg-white/[0.03] text-[#EFEFEF] hover:text-[#E2F163] transition-all"
+                      data-cursor="LIVE"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5 text-[#E2F163]" />
+                      <span>LIVE DEMO</span>
+                    </a>
+                  )}
                 </div>
               </div>
 

@@ -34,7 +34,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://github.com/S-lakhera",
+    url: "https://shashanklakhera.vercel.app",
     title: "Shashank Lakhera — Full-Stack Developer | MERN Stack Specialist",
     description:
       "Full-Stack Developer and Computer Science graduate specializing in building scalable web applications using React.js, Node.js, Express.js, and MongoDB.",

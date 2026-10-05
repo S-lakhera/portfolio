@@ -6,8 +6,8 @@ export const RESUME_DATA = {
   email: "lakherashashank70@gmail.com",
   socials: {
     github: "https://github.com/S-lakhera",
-    linkedin: "https://linkedin.com",
-    leetcode: "https://leetcode.com",
+    linkedin: "https://www.linkedin.com/in/shashank-lakhera-ab223b246",
+    leetcode: "https://leetcode.com/u/lakhera_shashank/",
   },
   summary:
     "Full-Stack Developer and Computer Science graduate specializing in the MERN stack. Experienced in building scalable web applications using React.js, Node.js, Express.js, and MongoDB, with expertise in RESTful APIs, authentication systems, payment integration, and responsive frontend development. Passionate about designing clean architectures, writing maintainable code, and delivering high-quality software using modern engineering practices.",
@@ -47,8 +47,8 @@ export const RESUME_DATA = {
         "Integrated GitHub API to automatically fetch repositories and ImageKit for cloud media management while architecting the application with a scalable MERN-based feature-oriented structure for future platform expansion.",
       ],
       links: {
-        github: "https://github.com/S-lakhera",
-        live: "#",
+        github: "https://github.com/S-lakhera/Dev-Hub",
+        live: "https://dev-hub-roan-one.vercel.app",
       },
       tags: ["React.js", "Node.js", "MongoDB", "TanStack Query", "GitHub OAuth", "ImageKit"],
     },
@@ -78,8 +78,8 @@ export const RESUME_DATA = {
         "Developed the Socket.IO backend for real-time match data synchronization and actively participated in Git-based team collaboration through pull request reviews, merge conflict resolution, and collaborative feature integration.",
       ],
       links: {
-        github: "https://github.com/S-lakhera",
-        live: "#",
+        github: "https://github.com/S-lakhera/GLPDDP",
+        live: "https://glpddp.vercel.app",
       },
       tags: ["Next.js", "Socket.IO", "MongoDB Schemas", "Redux Toolkit", "JWT Auth"],
     },
@@ -109,8 +109,8 @@ export const RESUME_DATA = {
         "Architected a scalable MERN application using feature-based frontend modules, MVC backend architecture, and Socket.IO-powered event-driven communication for low-latency message delivery.",
       ],
       links: {
-        github: "https://github.com/S-lakhera",
-        live: "#",
+        github: "https://github.com/S-lakhera/Nexus",
+        live: "https://nexus-chat-lilac-two.vercel.app",
       },
       tags: ["React.js", "Socket.IO", "Redux Toolkit", "JWT", "Tailwind CSS", "MVC Architecture"],
     },
