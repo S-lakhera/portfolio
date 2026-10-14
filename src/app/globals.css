@@ -18,6 +18,17 @@
   box-sizing: border-box;
 }
 
+/* Hide default OS cursor arrow on desktop/fine-pointer devices */
+@media (pointer: fine) {
+  html,
+  body,
+  *,
+  *::before,
+  *::after {
+    cursor: none !important;
+  }
+}
+
 html {
   background-color: #090a0c;
   color: #efefef;
