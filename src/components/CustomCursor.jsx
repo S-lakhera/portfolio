@@ -9,6 +9,7 @@ export default function CustomCursor() {
   const labelRef = useRef(null);
   const [cursorText, setCursorText] = useState("");
   const [isHovered, setIsHovered] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -20,14 +21,20 @@ export default function CustomCursor() {
     if (!cursor || !follower) return;
 
     // Fast GSAP quickTo setters for high-performance 60fps tracking
-    const xDot = gsap.quickTo(cursor, "x", { duration: 0.1, ease: "power3" });
-    const yDot = gsap.quickTo(cursor, "y", { duration: 0.1, ease: "power3" });
+    const xDot = gsap.quickTo(cursor, "x", { duration: 0.02, ease: "power3" });
+    const yDot = gsap.quickTo(cursor, "y", { duration: 0.02, ease: "power3" });
 
-    const xFollower = gsap.quickTo(follower, "x", { duration: 0.35, ease: "power3" });
-    const yFollower = gsap.quickTo(follower, "y", { duration: 0.35, ease: "power3" });
+    const xFollower = gsap.quickTo(follower, "x", {
+      duration: 0.35,
+      ease: "power3",
+    });
+    const yFollower = gsap.quickTo(follower, "y", {
+      duration: 0.35,
+      ease: "power3",
+    });
 
     const handleMouseMove = (e) => {
-      if (!isVisible) setIsVisible(true);
+      setIsVisible(true);
       xDot(e.clientX);
       yDot(e.clientY);
       xFollower(e.clientX);
@@ -35,7 +42,9 @@ export default function CustomCursor() {
     };
 
     const handleMouseOver = (e) => {
-      const target = e.target.closest("[data-cursor], a, button, input, [role='button']");
+      const target = e.target.closest(
+        "[data-cursor], a, button, input, [role='button']",
+      );
       if (target) {
         setIsHovered(true);
         const text = target.getAttribute("data-cursor");
@@ -54,16 +63,29 @@ export default function CustomCursor() {
       setIsVisible(false);
     };
 
+    const handleMouseEnter = () => {
+      setIsVisible(true);
+    };
+
+    const handleMouseDown = () => setIsClicked(true);
+    const handleMouseUp = () => setIsClicked(false);
+
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mouseover", handleMouseOver);
     document.addEventListener("mouseleave", handleMouseLeave);
+    document.addEventListener("mouseenter", handleMouseEnter);
+    window.addEventListener("mousedown", handleMouseDown);
+    window.addEventListener("mouseup", handleMouseUp);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseover", handleMouseOver);
       document.removeEventListener("mouseleave", handleMouseLeave);
+      document.removeEventListener("mouseenter", handleMouseEnter);
+      window.removeEventListener("mousedown", handleMouseDown);
+      window.removeEventListener("mouseup", handleMouseUp);
     };
-  }, [isVisible]);
+  }, []);
 
   return (
     <div
@@ -74,8 +96,8 @@ export default function CustomCursor() {
       {/* Precision Core Dot */}
       <div
         ref={cursorRef}
-        className={`fixed top-0 left-0 w-2 h-2 -ml-1 -mt-1 rounded-full bg-[#E2F163] transition-transform duration-200 ${
-          isHovered ? "scale-0" : "scale-100"
+        className={`fixed top-0 left-0 w-2 h-2 -ml-1 -mt-1 rounded-full bg-[#E2F163] transition-transform duration-150 ${
+          isHovered ? "scale-0" : isClicked ? "scale-75" : "scale-100"
         }`}
         style={{ willChange: "transform" }}
       />
@@ -87,9 +109,9 @@ export default function CustomCursor() {
           cursorText
             ? "w-24 h-24 -ml-12 -mt-12 bg-[#E2F163] text-[#090A0C] border-none shadow-2xl"
             : isHovered
-            ? "w-14 h-14 -ml-7 -mt-7 bg-white/10 border border-white/40 backdrop-blur-xs scale-110"
-            : "w-10 h-10 border border-white/25 bg-transparent"
-        }`}
+              ? "w-14 h-14 -ml-7 -mt-7 bg-white/10 border border-white/40 backdrop-blur-xs scale-110"
+              : "w-10 h-10 border   border-white/25 bg-black/25"
+        } ${isClicked ? "scale-90" : ""}`}
         style={{ willChange: "transform, width, height" }}
       >
         {cursorText && (

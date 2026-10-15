@@ -51,7 +51,10 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${inter.variable} h-full antialiased bg-[#090A0C]`}
     >
-      <body className="min-h-full flex flex-col font-sans bg-[#090A0C] text-[#EFEFEF]">
+      <body
+        suppressHydrationWarning
+        className="min-h-full flex flex-col font-sans bg-[#090A0C] text-[#EFEFEF]"
+      >
         <ClientShell>{children}</ClientShell>
       </body>
     </html>

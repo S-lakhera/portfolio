@@ -18,6 +18,26 @@
   box-sizing: border-box;
 }
 
+/* Hide default OS cursor arrow on desktop/fine-pointer devices while preserving text cursor for selectable content */
+@media (pointer: fine) {
+  html,
+  body,
+  *,
+  *::before,
+  *::after {
+    cursor: none;
+  }
+
+  input,
+  textarea,
+  [contenteditable="true"],
+  [contenteditable],
+  select,
+  .selectable-text {
+    cursor: text;
+  }
+}
+
 html {
   background-color: #090a0c;
   color: #efefef;
